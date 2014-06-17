@@ -1,0 +1,17 @@
+{
+  "availability": "MARKET",
+  "contextPath": "myapplication",
+  "key": "myapplication-appkey",
+  "name": "My Application",
+  "resourcesUrl": "https://bitbucket.org/USER/REPO/raw/master/build",
+  "type": "HOSTED",
+  "imports": [
+    "core/c8yBranding",
+    "core/deviceList",
+    "core/deviceDetail",
+    "myapplication/myplugin",
+    "myapplication/branding",
+    "myapplication/deviceContact",
+    "myapplication/deviceEventsRealTime"
+  ]
+}
