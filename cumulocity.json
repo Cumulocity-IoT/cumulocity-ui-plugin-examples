@@ -2,8 +2,8 @@
   "availability": "MARKET",
   "contextPath": "myapplication",
   "key": "myapplication-appkey",
-  "name": "My Application",
-  "resourcesUrl": "https://bitbucket.org/USER/REPO/raw/master/build",
+  "name": "myapplication",
+  "resourcesUrl": "https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/raw/develop/build",
   "type": "HOSTED",
   "imports": [
     "core/c8yBranding",
