@@ -1,4 +1,4 @@
-angular.module('c8y.parts.deviceEventsRealTime')
+angular.module('myapp.deviceEventsRealTime')
 .controller('deviceEventsRealTimeCtrl', ['$scope', '$routeParams', 'c8yNotifications', 'c8yAlert', 'c8yCepModule',
 function ($scope, $routeParams, c8yNotifications, c8yAlert, c8yCepModule) {
   var deviceId = $routeParams.deviceId,
