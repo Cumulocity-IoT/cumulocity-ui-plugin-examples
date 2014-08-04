@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
   'use strict';
 
-  grunt.config('cumulocity.host', 'integration.cumulocity.com');
+  grunt.config('cumulocity.host', 'developer.cumulocity.com');
   grunt.config('cumulocity.protocol', 'http');
 
   grunt.config('paths.root', './');
