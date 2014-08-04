@@ -1,0 +1,5 @@
+syntax: glob
+nbproject
+node_modules
+.cumulocity
+.tmp

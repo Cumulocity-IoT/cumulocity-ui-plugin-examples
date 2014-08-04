@@ -1,0 +1,8 @@
+{
+  "name": "cumulocity-ui-plugin-examples",
+  "version": "0.0.1",
+  "dependencies": {
+    "grunt-angular-templates": "^0.5.5",
+    "grunt-cumulocity-ui-tasks": "^0.0.15"
+  }
+}
