@@ -33,10 +33,8 @@ How to run the examples
     * change `contextPath` to something unique for your tenant,
     * change `key` to something unique for platform, (?)
     * change `name` to something unique for platform, (?)
-* temporarily empty `imports` list in application's manifest file,
-* run `grunt appRegister` to register the application without plugins,
+* run `grunt appRegister:noImports` to register the application without plugins,
 * run `grunt pluginRegisterAll` to register plugins for application,
-* restore `imports` list in application manifest file,
 * run `grunt appRegister` again to register the application with plugins,
 * run `grunt server` to start local server,
 * visit *http://localhost:8000/apps/<appname>* to see the application working.

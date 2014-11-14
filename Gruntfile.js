@@ -1,8 +1,21 @@
 module.exports = function (grunt) {
   'use strict';
 
-  grunt.config('cumulocity.host', 'developer.cumulocity.com');
-  grunt.config('cumulocity.protocol', 'http');
+  var DEFAULT_HOST = 'developer.cumulocity.com',
+    DEFAULT_PROTOCOL = 'https',
+    host = DEFAULT_HOST,
+    protocol = DEFAULT_PROTOCOL;
+
+  if (grunt.option('host')) {
+    host = grunt.option('host');
+  }
+
+  if (grunt.option('protocol')) {
+    protocol = grunt.option('protocol');
+  }
+
+  grunt.config('cumulocity.host', host);
+  grunt.config('cumulocity.protocol', protocol);
 
   grunt.config('paths.root', './');
   grunt.config('paths.temp', '.tmp');
@@ -14,10 +27,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-cumulocity-ui-tasks');
 
   grunt.registerTask('server', [
-    'readApplication',
-    // 'readPlugins',
     'pluginPreAll',
-    'connect:plugin',
+    'connect',
     'watch'
   ]);
 

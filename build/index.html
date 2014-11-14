@@ -69,14 +69,15 @@
       <div class="navigator" data-ng-controller="NavigatorCtrl" data-ng-include="'/apps/core/scripts/ui/views/navigator.html'" ng-class="{open: navOpen}"></div>
       <div class="mcontainer">
         <div class="dropdown pull-right" data-ng-controller="ActionsCtrl" data-ng-include="'/apps/core/scripts/ui/views/actions.html'"></div>
-        <div class="title" ng-show="title || subtitle" ng-controller="TitleCtrl" ng-include="'/apps/core/scripts/ui/views/title.html'"></div>
+        <div class="title" ng-controller="TitleCtrl" ng-include="'/apps/core/scripts/ui/views/title.html'"></div>
+        <div class="breadcrumbs" ng-controller="BreadcrumbsCtrl" ng-include="'/apps/core/scripts/ui/views/breadcrumbs.html'"></div>
         <div data-ng-controller="TabsCtrl" data-ng-include="'/apps/core/scripts/ui/views/tabs.html'" ng-class="{tabs_ctrl: tabs.length}"></div>
         <div data-ng-view class="container-fluid"></div>
       </div>
     </div>
 
     
-    <script src="//cdn.jsdelivr.net/g/jquery@1.11(jquery.min.js),angularjs@1.2.16(angular.min.js+angular-route.min.js+angular-animate.min.js+angular-sanitize.min.js)"></script>
+    <script src="//cdn.jsdelivr.net/g/jquery@2.1.1(jquery.min.js),angularjs@1.2.20(angular.min.js+angular-route.min.js+angular-animate.min.js+angular-sanitize.min.js),angular.bootstrap@0.11.0(ui-bootstrap.min.js+ui-bootstrap-tpls.js),momentjs@2.8.3(moment.min.js)"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
