@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "dependencies": {
     "grunt-angular-templates": "^0.5.5",
+    "grunt-angular-gettext": "^2.1.0",
     "grunt-cumulocity-ui-tasks": "latest"
   }
 }

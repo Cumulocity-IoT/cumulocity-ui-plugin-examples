@@ -1,6 +1,6 @@
 angular.module('myapp.deviceEventsRealTime')
-.controller('deviceEventsRealTimeCtrl', ['$scope', '$routeParams', 'c8yNotifications', 'c8yAlert', 'c8yCepModule',
-function ($scope, $routeParams, c8yNotifications, c8yAlert, c8yCepModule) {
+.controller('deviceEventsRealTimeCtrl', ['$scope', '$routeParams', 'c8yNotifications', 'c8yAlert', 'c8yCepModule', 'gettext',
+function ($scope, $routeParams, c8yNotifications, c8yAlert, c8yCepModule, gettext) {
   var deviceId = $routeParams.deviceId,
     eventsChannel = '/events/' + deviceId,
     cepModule = {
@@ -22,7 +22,7 @@ function ($scope, $routeParams, c8yNotifications, c8yAlert, c8yCepModule) {
       .then(c8yNotifications.configure)
       .then(angular.bind({}, c8yNotifications.subscribe, eventsChannel))
       .then(function (_subscription) {
-        c8yAlert.success('Connected! Waiting for incoming events...');
+        c8yAlert.success(gettext('Connected! Waiting for incoming events...'));
         subscription = _subscription;
         subscription.$on('message', onMessage);
       });
@@ -42,9 +42,14 @@ function ($scope, $routeParams, c8yNotifications, c8yAlert, c8yCepModule) {
       subscription.unsubscribe();
     }
   }
+  
+  function getEventText(event){
+      return event.data.text || gettext('-- no text message --');
+  }
 
   $scope.events = [];
   $scope.$on('$destroy', onDestroy);
+  $scope.getEventText = getEventText;
 
   subscribe();
 }]);

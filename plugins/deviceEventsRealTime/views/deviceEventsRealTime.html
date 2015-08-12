@@ -1,5 +1,5 @@
 <div>
-  <div class="alert alert-warning" ng-show="events.length === 0">
+  <div class="alert alert-warning" ng-show="events.length === 0" translate>
     No incoming events at the moment...
   </div>
   <table class="table table-hover">
@@ -8,9 +8,9 @@
         <span class="badge">{{e.data.type}}</span>
       </td>
       <td>
-        {{e.data.text || '-- no text message --'}}
-        <small class="text-muted hidden-sm hidden-xs" style="margin-right:10px;"><strong>Created:</strong> {{e.data.creationTime|date:'medium'}}</small>
-        <small class="text-muted hidden-sm hidden-xs"><strong>Data:</strong> {{e.data|json}}</small>
+        {{getEventText(e)}}
+        <small class="text-muted hidden-sm hidden-xs" style="margin-right:10px;"><strong translate>Created:</strong> {{e.data.creationTime|date:'medium'}}</small>
+        <small class="text-muted hidden-sm hidden-xs"><strong translate>Data:</strong> {{e.data|json}}</small>
       </td>
     </tr>
   </table>

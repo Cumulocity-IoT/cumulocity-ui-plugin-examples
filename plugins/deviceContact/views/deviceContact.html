@@ -2,23 +2,23 @@
   <div class="panel-body">
     <form name="contactForm">
       <div class="form-group">
-        <label for="contact_name">Name</label>
+        <label for="contact_name" translate>Name</label>
         <input id="contact_name" type="text" class="form-control" ng-model="device.c8y_Contact.name">
       </div>
       <div class="form-group">
-        <label for="contact_email">E-mail address</label>
+        <label for="contact_email" translate>E-mail address</label>
         <input id="contact_email" type="text" class="form-control" ng-model="device.c8y_Contact.email">
       </div>
       <div class="form-group">
-        <label for="contact_phone">Phone</label>
+        <label for="contact_phone" translate>Phone</label>
         <input id="contact_phone" type="text" class="form-control" ng-model="device.c8y_Contact.phone">
       </div>
       <div class="form-group">
-        <label for="contact_address">Address</label>
+        <label for="contact_address" translate>Address</label>
         <input id="contact_address" type="text" class="form-control" ng-model="device.c8y_Contact.address">
       </div>
       <div>
-        <a href="" class="btn btn-primary" ng-click="save(device)" ng-disabled="contactForm.$invalid">Save changes</a>
+        <a href="" class="btn btn-primary" ng-click="save(device)" ng-disabled="contactForm.$invalid" translate>Save changes</a>
       </div>
     </form>
   </div>

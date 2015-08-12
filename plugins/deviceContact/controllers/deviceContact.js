@@ -1,6 +1,6 @@
 angular.module('myapp.deviceContact')
-.controller('deviceContactCtrl', ['$scope', '$routeParams', 'c8yDevices', 'c8yAlert',
-  function ($scope, $routeParams, c8yDevices, c8yAlert) {
+.controller('deviceContactCtrl', ['$scope', '$routeParams', 'c8yDevices', 'c8yAlert', 'gettext',
+  function ($scope, $routeParams, c8yDevices, c8yAlert, gettext) {
     'use strict';
     
     function load() {
@@ -16,7 +16,7 @@ angular.module('myapp.deviceContact')
     }
 
     function onSave() {
-      c8yAlert.success('Contact information successfully saved!');
+      c8yAlert.success(gettext('Contact information successfully saved!'));
     }
 
     $scope.save = save;
