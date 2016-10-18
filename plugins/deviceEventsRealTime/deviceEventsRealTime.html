@@ -5,12 +5,12 @@
   <table class="table table-hover">
     <tr ng-repeat="e in events|orderBy:'id':true" >
       <td style="width:30px" class="text-center">
-        <span class="badge">{{e.data.type}}</span>
+        <span class="badge">{{e.type}}</span>
       </td>
       <td>
-        {{e.data.text || '-- no text message --'}}
-        <small class="text-muted hidden-sm hidden-xs" style="margin-right:10px;"><strong>Created:</strong> {{e.data.creationTime|date:'medium'}}</small>
-        <small class="text-muted hidden-sm hidden-xs"><strong>Data:</strong> {{e.data|json}}</small>
+        {{e.text || '-- no text message --'}}
+        <small class="text-muted" style="margin-right:10px;"><strong>Created:</strong> {{e.creationTime|date:'medium'}}</small>
+        <small class="text-muted"><strong>Data:</strong> {{e | json}}</small>
       </td>
     </tr>
   </table>
