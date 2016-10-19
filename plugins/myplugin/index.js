@@ -5,7 +5,7 @@
   //so that they can be loaded at application bootstrap
   angular.module('myapp.helloworld', [])
     .config(config)
-    .controller('mh_MainCtrl', MainController);
+    .controller('MyMainController', MainController);
 
   function config(c8yNavigatorProvider, c8yViewsProvider) {
     c8yNavigatorProvider.addNavigation({
@@ -18,7 +18,7 @@
     c8yViewsProvider.when('/hello', {
       // Please use this string placeholder where you want to refer you plugin path.
       templateUrl: ':::PLUGIN_PATH:::/index.html',
-      controller: 'mh_MainCtrl'
+      controller: 'MyMainController'
     });
 
     c8yViewsProvider.when('/', {
