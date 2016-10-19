@@ -3,14 +3,14 @@
   "contextPath": "myapplication",
   "key": "myapplication-appkey",
   "name": "myapplication",
-  "resourcesUrl": "https://bitbucket.org/m2m/cumulocity-ui-plugin-examples/raw/develop/build",
+  "resourcesUrl": "/",
   "type": "HOSTED",
   "imports": [
     "core/c8yBranding",
     "core/deviceList",
+    "core/groupsHierarchy",
     "core/deviceDetail",
     "myapplication/myplugin",
-    "myapplication/branding",
     "myapplication/deviceContact",
     "myapplication/deviceEventsRealTime"
   ]
