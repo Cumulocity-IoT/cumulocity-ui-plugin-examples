@@ -6,7 +6,7 @@
   "resourcesUrl": "/",
   "type": "HOSTED",
   "imports": [
-    "core/c8yBranding",
+    "myapplication/myBranding",
     "core/deviceList",
     "core/groupsHierarchy",
     "core/deviceDetail",
