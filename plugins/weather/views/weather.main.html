@@ -1,0 +1,32 @@
+<div ng-controller="weatherController" style="padding: 10px">
+  <div ng-show="status != 'ready'" class="alert alert-info">{{ status }}</div>
+  <div ng-show="status == 'ready'">
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>{{ 'Weather' | translate }}</td>
+          <td>
+            <dark-sky-icon icon="{{ weather.currently.icon }}"></dark-sky-icon>
+          </td>
+        </tr>
+        <tr>
+          <td>{{ 'Temperature' | translate }}</td>
+          <td>{{weather.currently.temperature}} C</td>
+        </tr>
+        <tr>
+          <td>{{ 'Pressure' | translate }}</td>
+          <td>{{weather.currently.pressure}} hPa</td>
+        </tr>
+        <tr>
+          <td>{{ 'Humidity' | translate }}</td>
+          <td>{{currently.humidity}} %</td>
+        </tr>
+        <tr>
+          <td>{{ 'Wind' | translate }}</td>
+          <td>{{weather.currently.windSpeed}} {{ 'm/s' | translate }} {{weather.currently.windBearing}} {{ 'deg' | translate }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="https://darksky.net/poweredby/"><img src="https://darksky.net/dev/img/attribution/poweredby.png"/></a>
+  </div>
+</div>

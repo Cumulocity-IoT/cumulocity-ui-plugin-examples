@@ -1,0 +1,3 @@
+This plugin uses [Dark Sky](https://darksky.net) for showing the weather at a device's location. You need an API key to use the service, which can be obtained on the Dark Sky web site.
+
+This plugin contains code from [angular-dark-sky](https://github.com/deanbot/angular-dark-sky) in the corresponding folder. The plugin contains fonts and CSS from [weather-icons](http://erikflowers.github.io/weather-icons/) in the corresponding folder.

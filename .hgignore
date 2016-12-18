@@ -3,3 +3,4 @@ nbproject
 node_modules
 .cumulocity
 .tmp
+.DS_Store
