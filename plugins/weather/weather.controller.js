@@ -2,7 +2,7 @@
   "use strict";
   /*global angular */
 
-  var app = angular.module('demowidgets.weather');
+  var app = angular.module('myapplication.weather');
 
   function weatherController($scope, $q, darkSky, gettext, c8yInventory) {
 
@@ -31,11 +31,21 @@
         return $q.reject();
       }
     }
+    
+    function rotate(weather) {
+      var direction = (weather.currently.windBearing + 180) % 360;
+      return 'rotate(' + direction + 'deg)';
+    }
         
     function showWeather(weather) {
       $scope.weather = weather;
+      $scope.windDirection = {
+        'display': 'inline-block',
+        '-ms-transform' : rotate(weather),
+        '-webkit-transform': rotate(weather),
+        'transform': rotate(weather)
+      };
       $scope.status = 'ready';
-      // alerts, flags, ...?
     }
     
     getDevice().then(tryGetWeather).then(showWeather);

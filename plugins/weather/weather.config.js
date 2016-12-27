@@ -2,7 +2,7 @@
   "use strict";
   /*global angular */
 
-  var app = angular.module('demowidgets.weather', [ 'dark-sky' ]);
+  var app = angular.module('myapplication.weather', [ 'dark-sky' ]);
 
   function configure(c8yComponentsProvider, darkSkyProvider, gettext) {
     c8yComponentsProvider.add({
@@ -13,6 +13,7 @@
     });
 
     darkSkyProvider.setApiKey('ebbbd7c57d23ee68afc974b0ec56e588');
+    darkSkyProvider.setUnits('si');
   }
 
   configure.$inject = [ 'c8yComponentsProvider', 'darkSkyProvider', 'gettext' ];

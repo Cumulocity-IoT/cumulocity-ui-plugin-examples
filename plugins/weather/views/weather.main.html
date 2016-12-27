@@ -19,14 +19,16 @@
         </tr>
         <tr>
           <td>{{ 'Humidity' | translate }}</td>
-          <td>{{currently.humidity}} %</td>
+          <td>{{weather.currently.humidity}} %</td>
         </tr>
         <tr>
           <td>{{ 'Wind' | translate }}</td>
-          <td>{{weather.currently.windSpeed}} {{ 'm/s' | translate }} {{weather.currently.windBearing}} {{ 'deg' | translate }}</td>
+          <td>{{weather.currently.windSpeed}} {{ 'm/s' | translate }} 
+            <span class="direction" ng-style="windDirection" uib-tooltip="{{weather.currently.windBearing}} {{ 'deg' | translate }}">↑</span>
+          </td>
         </tr>
       </tbody>
     </table>
-    <a href="https://darksky.net/poweredby/"><img src="https://darksky.net/dev/img/attribution/poweredby.png"/></a>
+    <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
   </div>
 </div>

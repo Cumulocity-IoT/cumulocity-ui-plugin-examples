@@ -2,6 +2,7 @@
   "name": "cumulocity-ui-plugin-examples",
   "version": "2.0.3",
   "dependencies": {
+    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.40.0.tar.gz",
     "grunt-angular-templates": "^0.5.5",
     "grunt-cumulocity-ui-tasks": "latest"
   }
