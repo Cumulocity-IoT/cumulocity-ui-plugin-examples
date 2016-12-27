@@ -3,22 +3,23 @@
   /*global angular */
 
   var app = angular.module('myapplication.weatherAdmin');
-  var option = { category: 'darksky', key: 'key', value: ''};
 
-  function weatherAdminController($scope, darkSkyProvider, c8ySettings) {
+  function weatherAdminController($scope, darkSky, c8ySettings) {
     
-    function updateKey(key) {
-      darkSkyProvider.setApiKey(key);
-      option.value = key;
-      c8ySettings.updateOption(option);
+    function updateKey() {
+      c8ySettings.updateOption($scope.option);
+      darkSky.setApiKey($scope.option.value);
     }
     
-    c8ySettings.detailValue(option).then(function (value) {
-      $scope.key = value;
-    }, function(error) {
-      c8ySettings.createOption(option);
+    $scope.option = { category: 'darksky', key: 'key', value: ''};
+    $scope.updateKey = updateKey;
+    
+    c8ySettings.detail($scope.option).then(function (res) {
+      $scope.option = res.data;
+    }, function (error) {
+      c8ySettings.createOption($scope.option);
     });
   }
     
-  app.controller('weatherAdminController', [ '$scope', 'darkSkyProvider', 'c8ySettings', weatherAdminController ]);
+  app.controller('weatherAdminController', [ '$scope', 'darkSky', 'c8ySettings', weatherAdminController ]);
 }());

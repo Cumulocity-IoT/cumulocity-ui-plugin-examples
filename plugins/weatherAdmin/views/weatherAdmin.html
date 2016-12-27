@@ -1,5 +1,6 @@
 <div ng-controller="weatherAdminController">
   <div class="col-lg-6 panel panel-clean">
+    <p style="font-weight: 300" translate>To use weather functionality in Cumulocity, enter your Dark Sky API key here. An API key can be obtained at <a href="https://darksky.net/dev/">https://darksky.net/dev/</a></p>
     <form class="form-horizontal" name="weatherAdminForm" novalidate>
       <div class="form-group">
         <label for="key" class="control-label" translate>API Key</label>
@@ -9,13 +10,13 @@
                  required
                  name="key"
                  id="key"
-                 ng-model="key"
+                 ng-model="option.value"
                  tooltip="{{getValidationHints('license') | translate}}"
                  c8y-autocomplete="off">
         </div>
       </div>
       <div class="form-group ">
-        <button type="submit" class="btn btn-primary" ng-click="updateKey(key)"
+        <button type="submit" class="btn btn-primary" ng-click="updateKey()"
                 ng-disabled="connectivitySettingsForm.$invalid||connectivitySettingsForm.$pristine" translate>
           Save
         </button>

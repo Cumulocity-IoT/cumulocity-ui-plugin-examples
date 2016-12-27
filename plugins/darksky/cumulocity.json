@@ -1,7 +1,7 @@
 {
   "name": "Dark Sky plugin",
   "description": "Dark Sky library files and weather icons",
-  "icon": "plug",
+  "icon": "cloud",
   "ngModules": [ "dark-sky" ],
   "js": [
       "angular-dark-sky/angular-dark-sky.min.js"

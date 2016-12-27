@@ -9,7 +9,7 @@
       parent: gettext('Settings'),
       name: gettext('Dark Sky'),
       path: 'darksky',
-      icon: 'plug'
+      icon: 'cloud'
     });
 
     c8yViewsProvider.when('/darksky', {

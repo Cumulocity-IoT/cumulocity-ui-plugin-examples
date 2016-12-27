@@ -2,7 +2,7 @@
   "name": "Weather",
   "description": "Shows the current weather at the location of a device.",
   "category": "Widgets",
-  "icon": "plug",
+  "icon": "cloud",
   "ngModules": [ "myapplication.weather" ],
   "js": [
       "weather.config.js",
