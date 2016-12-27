@@ -1,15 +1,12 @@
 {
   "name": "Weather",
   "description": "Shows the current weather at the location of a device.",
+  "category": "Widgets",
+  "icon": "plug",
   "ngModules": [ "myapplication.weather" ],
   "js": [
-      "angular-dark-sky/angular-dark-sky.min.js",
       "weather.config.js",
       "weather.controller.js"
   ],
-  "imports": [],
-  "less": [
-    "weather.less"
-  ],
-  "copy": [ "weather-icons/font" ]
+  "imports": [ "myapplication/darksky" ]
 }

@@ -3,7 +3,8 @@
 	"comment": "Release with additional example plugins",
 	"applications": [
 		{
-			"contextPath": "administration"
+			"contextPath": "administration",
+            "addImports": [ "myapplication/weatherAdmin" ]
 		},
 		{
 			"contextPath": "devicemanagement",

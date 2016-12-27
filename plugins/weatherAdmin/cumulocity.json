@@ -1,0 +1,12 @@
+{
+  "name": "Dark Sky settings",
+  "description": "Configure the API key for Dark Sky weather forecasts",
+  "icon": "plug",
+  "category": "Administrator",
+  "ngModules": [ "myapplication.weatherAdmin" ],
+  "imports": [ "myapplication/darksky" ],
+  "js": [
+    "weatheradmin.config.js",
+    "weatheradmin.controller.js"
+  ]
+}

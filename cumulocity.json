@@ -12,6 +12,8 @@
     "myapplication/branding",
     "myapplication/deviceContact",
     "myapplication/deviceEventsRealTime",
-    "myapplication/weather"
+    "myapplication/darksky",
+    "myapplication/weather",
+    "myapplication/weatherAdmin"
   ]
 }
