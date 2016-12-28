@@ -1,0 +1,41 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.8.11\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: de\n"
+
+#: myapplication_weatherAdmin/views/weatherAdmin.html:6
+msgid "API Key"
+msgstr "API-Schlüssel"
+
+#: myapplication_weatherAdmin/views/weatherAdmin.html:12
+msgid "Save"
+msgstr "Speichern"
+
+#: myapplication_weatherAdmin/weatheradmin.config.js:9
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: myapplication_weatherAdmin/weatheradmin.config.js:10
+msgid "Weather"
+msgstr "Wetter"
+
+#: myapplication_weatherAdmin/views/weatherAdmin.html:3
+msgid ""
+"Weather functionality is based on the <a href=\"https://darksky.net\">Dark "
+"Sky</a> service. Usage of Dark Sky requires an API key that can be obtained "
+"by registering at <a href=\"https://darksky.net/dev/\">https://darksky.net/"
+"dev/</a>. Paste the API key below."
+msgstr ""
+"Die Wetterfunktionalität wird von <a href=\"https://darksky.net\">Dark Sky</"
+"a> zur Verfügung gestellt. Die Benutzung erfordert einen API-Schlüssel, der "
+"nach Registrierung auf <a href=\"https://darksky.net/dev/\">https://darksky."
+"net/dev/</a> erhalten und hierhin kopiert werden kann."
