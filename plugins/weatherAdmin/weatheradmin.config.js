@@ -2,17 +2,17 @@
   "use strict";
   /*global angular */
 
-  var app = angular.module('myapplication.weatherAdmin', [ 'dark-sky' ]);
+  var app = angular.module('myapplication.weatherAdmin', [ 'myapplication.weatherService' ]);
 
   function configure(c8yNavigatorProvider, c8yViewsProvider, gettext) {
     c8yNavigatorProvider.addNavigation({
       parent: gettext('Settings'),
-      name: gettext('Dark Sky'),
-      path: 'darksky',
+      name: gettext('Weather'),
+      path: 'weather',
       icon: 'cloud'
     });
 
-    c8yViewsProvider.when('/darksky', {
+    c8yViewsProvider.when('/weather', {
       templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html'
     });
   }

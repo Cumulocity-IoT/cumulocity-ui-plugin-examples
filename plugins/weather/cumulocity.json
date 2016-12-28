@@ -4,9 +4,9 @@
   "category": "Widgets",
   "icon": "cloud",
   "ngModules": [ "myapplication.weather" ],
+  "imports": [ "myapplication/weatherService" ],
   "js": [
       "weather.config.js",
       "weather.controller.js"
-  ],
-  "imports": [ "myapplication/darksky" ]
+  ]
 }

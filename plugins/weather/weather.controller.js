@@ -4,14 +4,14 @@
 
   var app = angular.module('myapplication.weather');
 
-  function weatherController($scope, $q, darkSky, gettext, c8yInventory) {
+  function weatherController($scope, $q, weatherService, gettext, c8yInventory) {
 
     function locationAvailable(device) {
       return device && device.c8y_Position.lat && device.c8y_Position.lng;
     }
 
     function getWeather(coordinate) {
-      return darkSky.getCurrent(coordinate.lat, coordinate.lng);
+      return weatherService.weather.getCurrent(coordinate.lat, coordinate.lng);
     }
         
     function getDevice() {
@@ -51,5 +51,6 @@
     getDevice().then(tryGetWeather).then(showWeather);
   }
     
-  app.controller('weatherController', [ '$scope', '$q', 'darkSky', 'gettext', 'c8yInventory', weatherController ]);
+  weatherController.$inject = [ '$scope', '$q', 'weatherService', 'gettext', 'c8yInventory' ];
+  app.controller('weatherController', weatherController);
 }());

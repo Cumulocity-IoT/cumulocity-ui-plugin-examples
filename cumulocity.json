@@ -12,7 +12,7 @@
     "myapplication/branding",
     "myapplication/deviceContact",
     "myapplication/deviceEventsRealTime",
-    "myapplication/darksky",
+    "myapplication/weatherService",
     "myapplication/weather",
     "myapplication/weatherAdmin"
   ]
