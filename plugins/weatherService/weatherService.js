@@ -19,7 +19,7 @@
     self.option = { category: 'darksky', key: 'key', value: ''};
     
     self.c8ySettings.detail(self.option).then(function (res) {
-      self.option = res.data;
+      self.option.value = res.data.value;
       app.darkSkyProvider.setApiKey(self.option.value);
     }, function (error) {
       c8ySettings.createOption(self.option);
