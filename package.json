@@ -3,7 +3,16 @@
   "version": "2.0.3",
   "dependencies": {
     "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.41.1.tar.gz",
-    "grunt-angular-templates": "^0.5.5",
+    "grunt-angular-templates": "0.5.5",
     "grunt-cumulocity-ui-tasks": "latest"
+  },
+  "scripts": {
+    "lint": "eslint --cache --"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.x",
+    "eslint": "3.12.2",
+    "eslint-config-airbnb-es5": "1.1.0",
+    "eslint-plugin-react": "6.8.0"
   }
 }
