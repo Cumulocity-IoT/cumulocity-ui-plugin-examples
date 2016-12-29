@@ -3,6 +3,8 @@
   /*global angular */
 
   var app = angular.module('myapplication.weather', [ 'myapplication.weatherService' ]);
+  configure.$inject = [ 'c8yComponentsProvider', 'gettext' ];
+  app.config(configure);
 
   function configure(c8yComponentsProvider, gettext) {
     c8yComponentsProvider.add({
@@ -12,7 +14,4 @@
       templateUrl: ':::PLUGIN_PATH:::/views/weather.main.html'
     });
   }
-
-  configure.$inject = [ 'c8yComponentsProvider', 'gettext' ];
-  app.config(configure);
 }());

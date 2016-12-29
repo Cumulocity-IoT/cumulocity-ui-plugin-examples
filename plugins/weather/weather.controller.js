@@ -4,16 +4,22 @@
 
   var app = angular.module('myapplication.weather');
 
+  weatherController.$inject = [ '$scope', '$q', 'weatherService', 'gettext', 'c8yInventory' ];
+  app.controller('weatherController', weatherController);
+
   function weatherController($scope, $q, weatherService, gettext, c8yInventory) {
+    
+    $scope.$watch('child.config.device', function (newVal, oldVal) {
+      if (newVal && !angular.equals(newVal, oldVal)) {
+        init();
+      }
+    }, true);
+    init();
 
-    function locationAvailable(device) {
-      return device && device.c8y_Position.lat && device.c8y_Position.lng;
+    function init() {
+      getDevice().then(tryGetWeather).then(showWeather);
     }
-
-    function getWeather(coordinate) {
-      return weatherService.weather.getCurrent(coordinate.lat, coordinate.lng);
-    }
-
+    
     function getDevice() {
       var deviceId = $scope.child.config.device.id;
       $scope.status = gettext('Retrieving device ...');
@@ -32,11 +38,14 @@
       }
     }
     
-    function rotate(weather) {
-      var direction = (weather.currently.windBearing + 180) % 360;
-      return 'rotate(' + direction + 'deg)';
+    function locationAvailable(device) {
+      return device && device.c8y_Position.lat && device.c8y_Position.lng;
     }
-        
+
+    function getWeather(coordinate) {
+      return weatherService.weather.getCurrent(coordinate.lat, coordinate.lng);
+    }
+
     function showWeather(weather) {
       $scope.weather = weather;
       $scope.windDirection = {
@@ -48,18 +57,9 @@
       $scope.status = 'ready';
     }
     
-    function init() {
-      getDevice().then(tryGetWeather).then(showWeather);
+    function rotate(weather) {
+      var direction = (weather.currently.windBearing + 180) % 360;
+      return 'rotate(' + direction + 'deg)';
     }
-    
-    $scope.$watch('child.config.device', function (newVal, oldVal) {
-      if (newVal && !angular.equals(newVal, oldVal)) {
-        init();
-      }
-    }, true);
-    init();
   }
-    
-  weatherController.$inject = [ '$scope', '$q', 'weatherService', 'gettext', 'c8yInventory' ];
-  app.controller('weatherController', weatherController);
 }());
