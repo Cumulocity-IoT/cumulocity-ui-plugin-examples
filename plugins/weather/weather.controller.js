@@ -13,7 +13,7 @@
     function getWeather(coordinate) {
       return weatherService.weather.getCurrent(coordinate.lat, coordinate.lng);
     }
-        
+
     function getDevice() {
       var deviceId = $scope.child.config.device.id;
       $scope.status = gettext('Retrieving device ...');
@@ -48,7 +48,16 @@
       $scope.status = 'ready';
     }
     
-    getDevice().then(tryGetWeather).then(showWeather);
+    function init() {
+      getDevice().then(tryGetWeather).then(showWeather);
+    }
+    
+    $scope.$watch('child.config.device', function (newVal, oldVal) {
+      if (newVal && !angular.equals(newVal, oldVal)) {
+        init();
+      }
+    }, true);
+    init();
   }
     
   weatherController.$inject = [ '$scope', '$q', 'weatherService', 'gettext', 'c8yInventory' ];
