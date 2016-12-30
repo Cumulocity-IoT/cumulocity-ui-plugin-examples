@@ -6,10 +6,10 @@
   },
   "scripts": {
     "lint": "eslint --cache --",
-    "test": "karma start"
+    "test": "karma start --"
   },
   "devDependencies": {
-    "angular-mocks": "1.6.1",
+    "angular-mocks": "1.5.8",
     "babel-eslint": "6.x",
     "eslint": "3.12.2",
     "eslint-config-airbnb-es5": "1.1.0",

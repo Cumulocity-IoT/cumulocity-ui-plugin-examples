@@ -3,10 +3,15 @@
   "description": "Shows the current weather at the location of a device.",
   "category": "Widgets",
   "icon": "cloud",
-  "ngModules": [ "myapplication.weather" ],
-  "imports": [ "myapplication/weatherService" ],
+  "ngModules": [
+    "myapplication.weather"
+  ],
+  "imports": [
+    "myapplication/weatherService"
+  ],
   "js": [
-      "weather.config.js",
-      "weather.controller.js"
+    "weather.config.js",
+    "weather.controller.js",
+    "hello.component.js"
   ]
 }

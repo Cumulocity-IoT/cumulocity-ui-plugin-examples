@@ -9,10 +9,7 @@ describe('myapplication.weather: WeatherController', function () {
 
     //////////// must depended-upon modules
 
-    module(function ($provide) { $provide.value('info', {}); });
-    module('ngMock');
-    module('c8y.core');
-    module('c8y.ui');
+    common.globalBeforeWithUI();
 
     //////////// module to be tested
 
@@ -39,7 +36,7 @@ describe('myapplication.weather: WeatherController', function () {
 
       //////////// stubbing dependencies
 
-      //getWorldStub = spyOn($injector.get('exampleDependency'), 'getWorld');
+      //exampleStub = spyOn($injector.get('exampleService'), 'exampleMethod');
     });
 
     it('What should the feature do?', function () {

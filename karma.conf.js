@@ -1,3 +1,5 @@
+const APP_CONTEXT_PATH = process.argv[4] || 'myapplication';
+
 module.exports = (config) => {
   config.set({
 
@@ -8,7 +10,9 @@ module.exports = (config) => {
       'node_modules/angular-mocks/angular-mocks.js',
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/tentacle.js/dist/tentacle.js',
+      'test-helper.js',
       'plugins/**/*index.js',
+      'plugins/**/*config.js',
       'plugins/**/*.js',
       'plugins/**/*.html'
     ],
@@ -26,7 +30,8 @@ module.exports = (config) => {
     ],
 
     preprocessors: {
-      '**/plugins/{**/,}*.js': ['c8y-pluginpath']
+      '**/plugins/{**/,}*.js': ['c8y-pluginpath'],
+      '**/*.html': ['ng-html2js']
     },
 
     reporters: ['spec'],
@@ -39,6 +44,11 @@ module.exports = (config) => {
       showSpecTiming: false // print the time elapsed for each spec
     },
 
+    ngHtml2JsPreprocessor: {
+      cacheIdFromPath: (filepath) => computePluginPath(filepath),
+      moduleName: 'c8yHtml.test'
+    },
+
     logLevel: config.LOG_ERROR,
 
     client: {
@@ -49,10 +59,13 @@ module.exports = (config) => {
 
 function c8yPluginPathPreprocessor() {
   return (content, file, done) => {
-    var APP_CONTEXT_PATH = 'myapplication';
-    var pluginName = (/plugins\/(.+?)\/+?/.exec(file.originalPath))[1];
-    var pluginPath = APP_CONTEXT_PATH + '_' + pluginName;
-
-    done(content.replace(':::PLUGIN_PATH:::', pluginPath));
+    done(content.replace(':::PLUGIN_PATH:::', computePluginPath(file.originalPath)));
   };
+}
+
+function computePluginPath(filepath) {
+  const pluginName = (/plugins\/(.+?)\/+?/.exec(filepath))[1];
+  const pluginPath = `${APP_CONTEXT_PATH}_${pluginName}`;
+
+  return pluginPath;
 }

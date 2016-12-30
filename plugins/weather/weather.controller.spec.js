@@ -2,7 +2,7 @@
   'use strict';
   /*global describe, beforeEach, tentacle, it, sinon, expect, async */
 
-  describe('weather controller', function () {
+  xdescribe('weather controller', function () {
     var mocks;
     var id = 42;
     var config = { config: { device: { id: id } } };
