@@ -12,6 +12,6 @@
   "js": [
     "weather.config.js",
     "weather.controller.js",
-    "hello.component.js"
+    "hello/hello.component.js"
   ]
 }

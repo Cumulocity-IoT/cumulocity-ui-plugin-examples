@@ -1,4 +1,19 @@
+const _ = require('lodash');
+const glob = require('glob');
+const { readJsonSync } = require('fs-extra');
+const {
+  dirname,
+  join,
+} = require('path');
+
 const APP_CONTEXT_PATH = process.argv[4] || 'myapplication';
+
+const pluginJsFiles = _(glob.sync('plugins/**/*/cumulocity.json'))
+  .flatMap(manifestFile =>
+    _.map(readJsonSync(manifestFile).js, jsFile =>
+      join(dirname(manifestFile), jsFile)))
+  .compact()
+  .value();
 
 module.exports = (config) => {
   config.set({
@@ -11,10 +26,9 @@ module.exports = (config) => {
       'node_modules/sinon/pkg/sinon.js',
       'node_modules/tentacle.js/dist/tentacle.js',
       'test-helper.js',
-      'plugins/**/*index.js',
-      'plugins/**/*config.js',
-      'plugins/**/*.js',
-      'plugins/**/*.html'
+      ...pluginJsFiles,
+      'plugins/**/*.spec.js',
+      'plugins/**/*.html',
     ],
 
     frameworks: ['jasmine'],
@@ -26,12 +40,12 @@ module.exports = (config) => {
       'karma-phantomjs-launcher',
       'karma-spec-reporter',
       'karma-ng-html2js-preprocessor',
-      { 'preprocessor:c8y-pluginpath': ['factory', c8yPluginPathPreprocessor] }
+      { 'preprocessor:c8y-pluginpath': ['factory', c8yPluginPathPreprocessor] },
     ],
 
     preprocessors: {
       '**/plugins/{**/,}*.js': ['c8y-pluginpath'],
-      '**/*.html': ['ng-html2js']
+      '**/*.html': ['ng-html2js'],
     },
 
     reporters: ['spec'],
@@ -41,19 +55,19 @@ module.exports = (config) => {
       suppressFailed: false,  // do not print information about failed tests
       suppressPassed: false,  // do not print information about passed tests
       suppressSkipped: false,  // do not print information about skipped tests
-      showSpecTiming: false // print the time elapsed for each spec
+      showSpecTiming: false, // print the time elapsed for each spec
     },
 
     ngHtml2JsPreprocessor: {
       cacheIdFromPath: (filepath) => computePluginPath(filepath),
-      moduleName: 'c8yHtml.test'
+      moduleName: 'c8yHtml.test',
     },
 
     logLevel: config.LOG_ERROR,
 
     client: {
-      captureConsole: true
-    }
+      captureConsole: true,
+    },
   });
 };
 
