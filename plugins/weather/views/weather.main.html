@@ -6,7 +6,7 @@
         <tr>
           <td>{{ 'Weather' | translate }}</td>
           <td>
-            <dark-sky-icon icon="{{ weather.currently.icon }}" uib-tooltip="{{weather.currently.summary | translate }}"></dark-sky-icon>
+            <dark-sky-icon icon="{{ weather.currently.icon }}" uib-tooltip="{{weather.currently.summary | translate }}" tooltip-append-to-body="true"></dark-sky-icon>
           </td>
         </tr>
         <tr>
