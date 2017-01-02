@@ -24,7 +24,7 @@
 
     function activate() {
       _.assign(vm, {
-        hello: 'hello, ' + vm.world,
+        hello: 'hello, ' + vm.world
       });
     }
   }

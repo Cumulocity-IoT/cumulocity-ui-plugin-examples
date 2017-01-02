@@ -1,10 +1,8 @@
 describe('myapplication.weather: c8yHello component', function () {
   var $injector;
   var $rootScope;
-  var $q;
   var $compile;
   var $componentController;
-  var $httpBackend;
 
   beforeEach(function () {
     common.globalBeforeWithUI();
@@ -15,15 +13,12 @@ describe('myapplication.weather: c8yHello component', function () {
       _$rootScope_,
       _$q_,
       _$compile_,
-      _$componentController_,
-      _$httpBackend_
+      _$componentController_
     ) {
       $injector = _$injector_;
       $rootScope = _$rootScope_;
-      $q = _$q_;
       $compile = _$compile_;
       $componentController = _$componentController_;
-      $httpBackend = _$httpBackend_;
     });
   });
 
@@ -39,11 +34,10 @@ describe('myapplication.weather: c8yHello component', function () {
 
       //////////// stubbing dependencies
 
-      //exampleStub = spyOn($injector.get('exampleService'), 'exampleMethod');
+      // exampleStub = spyOn($injector.get('exampleService'), 'exampleMethod');
     });
 
     it('should correctly display text based on the "world" binding', function () {
-
       // given
       var bindings = { world: 'world' };
       var template = '<c8y-hello world="world"></c8y-hello>';
@@ -61,7 +55,7 @@ describe('myapplication.weather: c8yHello component', function () {
       //////
 
       // given
-      var bindings = { world: 'dunia' };
+      bindings = { world: 'dunia' };
 
       // when
       var controller = $componentController('c8yHello', undefined, bindings);
