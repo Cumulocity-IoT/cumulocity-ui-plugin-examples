@@ -57,3 +57,7 @@ msgstr "Grad"
 #: demowidgets_weather/views/weather.main.html:26
 msgid "m/s"
 msgstr "m/s"
+
+msgid "Error retrieving weather information."
+msgstr "Der Wetterdienst steht derzeit nicht zur Verfügung."
+

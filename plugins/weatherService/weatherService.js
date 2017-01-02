@@ -1,12 +1,12 @@
-(function () {
-  "use strict";
-  /*global angular */
+(function wrapper() {
+  'use strict';
+  /* global angular */
 
   var app = angular.module('myapplication.weatherService', [ 'dark-sky' ]);
 
   configure.$inject = [ 'darkSkyProvider' ];
   app.config(configure);
-  
+
   function configure(darkSkyProvider) {
     darkSkyProvider.setUnits('si');
     app.darkSkyProvider = darkSkyProvider;
@@ -20,20 +20,19 @@
     self.weather = darkSky;
     self.c8ySettings = c8ySettings;
     self.option = { category: 'darksky', key: 'key', value: ''};
-    
-    self.c8ySettings.detail(self.option).then(function (res) {
+
+    self.c8ySettings.detail(self.option).then(function setKey(res) {
       self.option.value = res.data.value;
       app.darkSkyProvider.setApiKey(self.option.value);
-    }, function () {
-      c8ySettings.createOption(self.option);
+    }, function initKey() {
+      self.c8ySettings.createOption(self.option);
     });
   }
-    
-  WeatherService.prototype.save = function (apiKey) {
+
+  WeatherService.prototype.save = function save(apiKey) {
     var self = this;
     self.option.value = apiKey;
     self.c8ySettings.updateOption(self.option);
     app.darkSkyProvider.setApiKey(apiKey);
   };
-
 }());

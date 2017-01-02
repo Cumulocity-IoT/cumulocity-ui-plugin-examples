@@ -1,62 +1,111 @@
-(function () {
-  'use strict';
-  /*global describe, beforeEach, tentacle, it, sinon, expect, async */
+describe('myapplication.weather: WeatherController', function testController() {
+  var $rootScope;
+  var $controller;
+  var $q;
+  var gettext;
+  var c8yInventory;
+  var weatherService;
 
-  xdescribe('weather controller', function () {
-    var mocks;
-    var id = 42;
-    var config = { config: { device: { id: id } } };
-    var lat = 51.2674861, lng = 6.76976378327068;
-    var deviceWithLocation = { data : { c8y_Position: { lat: lat, lng: lng } } };
-    var deviceNoLocation = { data: {} };
+  var $scope;
+
+  beforeEach(function beforeEach() {
+    common.globalBeforeWithUI();
+    module('myapplication.weather');
+
+    inject(function injector(
+      _$rootScope_,
+      _$controller_,
+      _$q_,
+      _gettext_,
+      _c8yInventory_,
+      _weatherService_
+    ) {
+      $rootScope = _$rootScope_;
+      $controller = _$controller_;
+      $q = _$q_;
+      gettext = _gettext_;
+      c8yInventory = _c8yInventory_;
+      weatherService = _weatherService_;
+    });
+  });
+
+  var id = 42;
+  var scope = { child: { config: { device: { id: id } } } };
+  var lat = 51.2674861;
+  var lng = 6.76976378327068;
+  var deviceWithLocation = { data: { c8y_Position: { lat: lat, lng: lng } } };
+
+  it('gets the weather at a device location', function testGetWeather() {
+    // Given
+    spyOn(c8yInventory, 'detail').and.returnValue(async(deviceWithLocation));
+
     var weather = { currently: {
       icon: 'clear-day', temperature: 30, pressure: 1040, humidity: 5, windSpeed: 5, windBearing: 200
     }};
-    
-    beforeEach(function () {
-      mocks = tentacle.controller('myapplication.weather', 'weatherController');
-      mocks.$scope.child = config;
-      mocks.gettext = function(arg) { return arg; }
-    });
-
-    it('gets the weather at a device location', function () {
-      mocks.c8yInventory.detail = sinon.stub().returns(async(deviceWithLocation));
-      mocks.weatherService.weather.getCurrent = sinon.stub().returns(async(weather));
-      
-      tentacle.controller.run();
-      
-      expect(mocks.c8yInventory.detail.calledOnce).toBe(true);
-      expect(mocks.c8yInventory.detail.calledWith(id)).toBe(true);
-      
-      expect(mocks.weatherService.weather.calledOnce).toBe(true);
-      expect(mocks.weatherService.weather.calledWith(lat, lng)).toBe(true);
-      
-      expect(mocks.$scope.weather).toEqual(weather);
-      expect(mocks.$scope.status).toEqual('ready');
-    });
-    
-    it('updates the weather when the device is changed', function () {
-      // how to do that?
-    });
-
-    it('reports an error if the selected device has no location', function () {
-      mocks.c8yInventory.detail = sinon.stub().returns(async(deviceNoLocation));
-
-      tentacle.controller.run();
-      
-      expect(mocks.c8yInventory.detail.calledOnce).toBe(true);
-      expect(mocks.$scope.$status).toMatch('has not reported a location');
-      // how to check that weather service has not been called.
-    });
-
-    it('reports an error if the device cannot be retrieved', function () {
-    });
-
-    it('reports an error if the API key is not set', function () {
-    });
-
-    it('reports an error if the weather information cannot be retrieved', function () {
-    });    
+    spyOn(weatherService.weather, 'getCurrent').and.returnValue(async(weather));
+    // When
+    run(scope);
+    // Then
+    expect(c8yInventory.detail).toHaveBeenCalledWith(id);
+    expect(weatherService.weather.getCurrent).toHaveBeenCalledWith(lat, lng);
+    expect($scope.weather).toEqual(weather);
+    expect($scope.status).toEqual('ready');
   });
 
-}());
+  it('reports an error if the selected device has no location', function testNoLocation() {
+    // Given
+    var deviceNoLocation = { data: {} };
+    spyOn(c8yInventory, 'detail').and.returnValue(async(deviceNoLocation));
+    spyOn(weatherService.weather, 'getCurrent');
+    // When
+    run(scope);
+    // Then
+    expect(c8yInventory.detail).toHaveBeenCalled();
+    expect(weatherService.weather.getCurrent).not.toHaveBeenCalled();
+    expect($scope.status).toMatch('has not reported a location');
+  });
+
+  it('reports an error if the device cannot be retrieved', function testError() {
+    // Given
+    var deviceError = { status: 404 };
+    spyOn(c8yInventory, 'detail').and.returnValue(async(deviceError));
+    spyOn(weatherService.weather, 'getCurrent');
+    // When
+    run(scope);
+    // Then
+    expect(c8yInventory.detail).toHaveBeenCalled();
+    expect(weatherService.weather.getCurrent).not.toHaveBeenCalled();
+    expect($scope.status).toMatch('has not reported a location');
+  });
+
+  it('reports an error if the weather information cannot be retrieved', function testNoWeather() {
+    spyOn(c8yInventory, 'detail').and.returnValue(async(deviceWithLocation));
+    spyOn(weatherService.weather, 'getCurrent').and.returnValue(asyncFailed('error'));
+    // When
+    run(scope);
+    // Then
+    expect(c8yInventory.detail).toHaveBeenCalled();
+    expect(weatherService.weather.getCurrent).toHaveBeenCalled();
+    expect($scope.status).toMatch('Error retrieving weather information');
+  });
+
+  function run(scopeBindings) {
+    $scope = _.assign($rootScope.$new(), scopeBindings);
+
+    $controller('weatherController', {
+      $scope: $scope,
+      $q: $q,
+      weatherService: weatherService,
+      gettext: gettext,
+      c8yInventory: c8yInventory
+    });
+  }
+
+  function async(x) {
+    return { then: function cb(success) { return success(x); } };
+  }
+
+  function asyncFailed(x) {
+    return { then: function cb(success, error) { return error(x); } };
+  }
+});

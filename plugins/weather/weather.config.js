@@ -1,8 +1,9 @@
-(function () {
-  "use strict";
-  /*global angular */
+(function wrapper() {
+  'use strict';
+  /* global angular */
 
   var app = angular.module('myapplication.weather', [ 'myapplication.weatherService' ]);
+
   configure.$inject = [ 'c8yComponentsProvider', 'gettext' ];
   app.config(configure);
 
