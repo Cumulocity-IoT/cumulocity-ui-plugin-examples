@@ -3,12 +3,16 @@
   /* global angular */
 
   var app = angular.module('myapplication.weatherAdmin');
-  weatherAdminController.$inject = [ '$scope', 'weatherService' ];
+  weatherAdminController.$inject = [ '$scope', 'c8yTitle', 'weatherService', 'gettext' ];
   app.controller('weatherAdminController', weatherAdminController);
 
-  function weatherAdminController($scope, weatherService) {
+  function weatherAdminController($scope, c8yTitle, weatherService, gettext) {
     $scope.option = weatherService.option;
     $scope.updateOption = updateOption;
+
+    c8yTitle.changeTitle({
+      title: gettext('Weather provider settings')
+    });
 
     function updateOption() {
       weatherService.save($scope.option);

@@ -14,6 +14,7 @@
     "myapplication/deviceEventsRealTime",
     "myapplication/weatherService",
     "myapplication/weather",
-    "myapplication/weatherAdmin"
+    "myapplication/weatherAdmin",
+    "myapplication/iconmap"
   ]
 }

@@ -12,7 +12,7 @@
 		},
 		{
 			"contextPath": "cockpit",
-            "addImports": [ "myapplication/weather" ]
+            "addImports": [ "myapplication/weather", "myapplication/iconmap" ]
 		}
 	]
 }

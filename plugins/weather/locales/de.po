@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-12-17 20:23+0100\n"
+"PO-Revision-Date: 2017-01-03 19:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: de\n"
@@ -13,51 +13,53 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: demowidgets_weather/weather.controller.js:30
+#: myapplication_weather/weather.controller.js:36
 msgid "Device has not reported a location, cannot retrieve weather."
-msgstr "Gerät hat noch keinen Standort gemeldet, daher kann das Wetter dort nicht bestimmt werden."
+msgstr ""
+"Gerät hat noch keinen Standort gemeldet, daher kann das Wetter dort nicht "
+"bestimmt werden."
 
-#: demowidgets_weather/views/weather.main.html:21
-msgid "Humidity"
-msgstr "Luftfeuchtigkeit"
-
-#: demowidgets_weather/views/weather.main.html:17
-msgid "Pressure"
-msgstr "Luftdruck"
-
-#: demowidgets_weather/weather.controller.js:19
-msgid "Retrieving device ..."
-msgstr "Lese Gerätedaten …"
-
-#: demowidgets_weather/weather.controller.js:27
-msgid "Retrieving weather ..."
-msgstr "Lese Wetterdaten …"
-
-#: demowidgets_weather/weather.config.js:11
-msgid "Shows the current weather at the location of a device"
-msgstr "Zeigt das aktuelle Wetter am Standort eines Geräts an."
-
-#: demowidgets_weather/views/weather.main.html:13
-msgid "Temperature"
-msgstr "Temperatur"
-
-#: demowidgets_weather/views/weather.main.html:7
-#: demowidgets_weather/weather.config.js:10
-msgid "Weather"
-msgstr "Wetter"
-
-#: demowidgets_weather/views/weather.main.html:25
-msgid "Wind"
-msgstr "Wind"
-
-#: demowidgets_weather/views/weather.main.html:26
-msgid "deg"
-msgstr "Grad"
-
-#: demowidgets_weather/views/weather.main.html:26
-msgid "m/s"
-msgstr "m/s"
-
+#: myapplication_weather/weather.controller.js:60
 msgid "Error retrieving weather information."
 msgstr "Der Wetterdienst steht derzeit nicht zur Verfügung."
 
+#: myapplication_weather/views/weather.main.html:21
+msgid "Humidity"
+msgstr "Luftfeuchtigkeit"
+
+#: myapplication_weather/views/weather.main.html:17
+msgid "Pressure"
+msgstr "Luftdruck"
+
+#: myapplication_weather/weather.controller.js:24
+msgid "Retrieving device ..."
+msgstr "Lese Gerätedaten …"
+
+#: myapplication_weather/weather.controller.js:32
+msgid "Retrieving weather ..."
+msgstr "Lese Wetterdaten …"
+
+#: myapplication_weather/weather.config.js:14
+msgid "Shows the current weather at the location of a device"
+msgstr "Zeigt das aktuelle Wetter am Standort eines Geräts an."
+
+#: myapplication_weather/views/weather.main.html:13
+msgid "Temperature"
+msgstr "Temperatur"
+
+#: myapplication_weather/views/weather.main.html:7
+#: myapplication_weather/weather.config.js:13
+msgid "Weather"
+msgstr "Wetter"
+
+#: myapplication_weather/views/weather.main.html:25
+msgid "Wind"
+msgstr "Wind"
+
+#: myapplication_weather/views/weather.main.html:27
+msgid "deg"
+msgstr "Grad"
+
+#: myapplication_weather/views/weather.main.html:26
+msgid "m/s"
+msgstr "m/s"
