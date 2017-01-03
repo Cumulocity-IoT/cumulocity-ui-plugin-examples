@@ -38,7 +38,9 @@
     }
 
     function createTypeMap(devices) {
-      return angular.forEach(devices, _.curry(addDeviceToTypeMap)({}));
+      var typeMap = {};
+      angular.forEach(devices, _.curry(addDeviceToTypeMap)(typeMap));
+      return typeMap;
     }
 
     function addDeviceToTypeMap(typeMap, device) {
@@ -55,7 +57,9 @@
     }
 
     function createIconMap(binaries) {
-      return angular.forEach(binaries, _.curry(addIconToIconMap)({}));
+      var iconMap = {};
+      angular.forEach(binaries, _.curry(addIconToIconMap)(iconMap));
+      return iconMap;
     }
 
     function addIconToIconMap(iconMap, icon) {
@@ -67,7 +71,7 @@
     }
 
     function place(devices, uri) {
-      angular.forEach(devices, _.curryRight(placeDevice)(uri));
+      angular.forEach(devices, _.curry(placeDevice)(_, uri));
     }
 
     function placeDevice(device, uri) {
