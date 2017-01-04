@@ -1,6 +1,7 @@
 {
 	"name": "Examples",
 	"comment": "Release with additional example plugins",
+    "replaceImports": { "core/c8yBranding": "myapplication/myBranding" },
 	"applications": [
 		{
 			"contextPath": "administration",

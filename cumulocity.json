@@ -9,7 +9,7 @@
     "core/deviceList",
     "core/deviceDetail",
     "myapplication/myplugin",
-    "myapplication/branding",
+    "myapplication/myBranding",
     "myapplication/deviceContact",
     "myapplication/deviceEventsRealTime",
     "myapplication/weatherService",
