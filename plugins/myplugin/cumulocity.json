@@ -2,9 +2,11 @@
   "name": "Hello world plugin testing",
   "description": "Simple hello world plugin.",
   "ngModules": [
-    "myapp.helloworld"
+    "helloapp.hello"
   ],
   "js": [
-    "index.js"
+    "hello.module.js",
+    "hello.config.js",
+    "hello.controller.js"
   ]
 }
