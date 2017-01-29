@@ -5,11 +5,11 @@
       <div class="form-group">
         <label for="key" class="control-label" translate>API Key</label>
         <div ng-class="{'has-error': invalid('license')}">
-          <input type="text" class="form-control" required name="key" id="key" ng-model="option.value" c8y-autocomplete="off">
+          <input type="text" class="form-control" required name="key" id="key" ng-model="key" c8y-autocomplete="off">
         </div>
       </div>
       <div class="form-group ">
-        <button type="submit" class="btn btn-primary" ng-click="updateOption()"
+        <button type="submit" class="btn btn-primary" ng-click="updateKey()"
                 ng-disabled="weatherAdminForm.$invalid||weatherAdminForm.$pristine" translate>
           Save
         </button>

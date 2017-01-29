@@ -79,6 +79,7 @@ describe('myapplication.weather: WeatherController', function testController() {
   });
 
   it('reports an error if the weather information cannot be retrieved', function testNoWeather() {
+    // Given
     spyOn(c8yInventory, 'detail').and.returnValue(async(deviceWithLocation));
     spyOn(weatherService.weather, 'getCurrent').and.returnValue(asyncFailed('error'));
     // When
