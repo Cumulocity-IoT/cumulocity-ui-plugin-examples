@@ -1,1 +1,0 @@
-angular.module("myapp.branding",[]).config(function(){});
