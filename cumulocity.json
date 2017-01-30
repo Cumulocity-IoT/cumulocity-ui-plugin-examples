@@ -5,11 +5,11 @@
   "name": "myapplication",
   "type": "HOSTED",
   "imports": [
-    "core/c8yBranding",
+    "myapplication/myBranding",
     "core/deviceList",
+    "core/groupsHierarchy",
     "core/deviceDetail",
     "myapplication/myplugin",
-    "myapplication/myBranding",
     "myapplication/deviceContact",
     "myapplication/deviceEventsRealTime",
     "myapplication/weatherService",
