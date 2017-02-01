@@ -2,8 +2,9 @@ const _ = require('lodash');
 const glob = require('glob');
 const { readJsonSync } = require('fs-extra');
 const {
-  dirname,
   join,
+  dirname,
+  basename,
 } = require('path');
 
 const APP_CONTEXT_PATH = process.argv[4] || 'myapplication';
@@ -59,7 +60,7 @@ module.exports = (config) => {
     },
 
     ngHtml2JsPreprocessor: {
-      cacheIdFromPath: (filepath) => computePluginPath(filepath),
+      cacheIdFromPath: filepath => join(computePluginPath(filepath), basename(filepath)),
       moduleName: 'c8yHtml.test',
     },
 
@@ -73,7 +74,7 @@ module.exports = (config) => {
 
 function c8yPluginPathPreprocessor() {
   return (content, file, done) => {
-    done(content.replace(':::PLUGIN_PATH:::', computePluginPath(file.originalPath)));
+    done(content.replace(/:::PLUGIN_PATH:::/g, computePluginPath(file.originalPath)));
   };
 }
 
