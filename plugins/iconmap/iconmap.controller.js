@@ -89,4 +89,4 @@
       $scope.markers.push(marker);
     }
   }
-}());
+})();

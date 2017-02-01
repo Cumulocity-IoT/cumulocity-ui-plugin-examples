@@ -43,4 +43,4 @@
     self.c8ySettings.updateOption(self.option);
     app.darkSkyProvider.setApiKey(apiKey);
   };
-}());
+})();

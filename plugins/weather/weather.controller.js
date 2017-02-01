@@ -65,4 +65,4 @@
       return 'rotate(' + direction + 'deg)';
     }
   }
-}());
+})();

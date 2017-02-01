@@ -15,4 +15,4 @@
       templateUrl: ':::PLUGIN_PATH:::/views/weather.main.html'
     });
   }
-}());
+})();

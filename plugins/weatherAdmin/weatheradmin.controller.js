@@ -20,4 +20,4 @@
       weatherService.save($scope.key);
     }
   }
-}());
+})();

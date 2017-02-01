@@ -16,4 +16,4 @@
       options: { noDeviceTarget: true }
     });
   }
-}());
+})();

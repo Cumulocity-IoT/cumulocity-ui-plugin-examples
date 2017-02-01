@@ -18,4 +18,4 @@
       templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html'
     });
   }
-}());
+})();
