@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('helloapp.hello')
+    .module('myapp.hello')
     .controller('HelloController', HelloController);
 
   function HelloController() {

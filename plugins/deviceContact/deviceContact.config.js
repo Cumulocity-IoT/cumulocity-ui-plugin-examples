@@ -14,7 +14,7 @@
       name: 'Contact',
       icon: 'envelope-o',
       priority: 1000,
-      templateUrl: ':::PLUGIN_PATH:::/deviceContact.html',
+      templateUrl: ':::PLUGIN_PATH:::/views/deviceContact.html',
       controller: 'deviceContactCtrl'
     });
   }

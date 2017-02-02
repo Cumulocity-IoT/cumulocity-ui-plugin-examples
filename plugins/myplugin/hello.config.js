@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('helloapp.hello')
+    .module('myapp.hello')
     .config(configure);
 
   configure.$inject = [
@@ -22,7 +22,7 @@
     });
 
     c8yViewsProvider.when('/hello', { // when the path "/hello" is accessed ...
-      templateUrl: ':::PLUGIN_PATH:::/hello.html', //  ... display our html file "hello.html" inside the "views" folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
+      templateUrl: ':::PLUGIN_PATH:::/views/hello.html', //  ... display our html file "hello.html" inside the "views" folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
       controller: 'HelloController', // ... use "HelloController" as controller
       controllerAs: 'vm'
     });

@@ -14,7 +14,7 @@
     c8yViewsProvider.when('/device/:deviceId', {
       name: 'Real-Time Events',
       icon: 'rss',
-      templateUrl: ':::PLUGIN_PATH:::/deviceEventsRealTime.html',
+      templateUrl: ':::PLUGIN_PATH:::/views/deviceEventsRealTime.html',
       controller: 'deviceEventsRealTimeCtrl'
     });
 
