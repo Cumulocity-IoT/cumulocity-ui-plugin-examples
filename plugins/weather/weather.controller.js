@@ -16,7 +16,7 @@
     init();
 
     function init() {
-      getDevice().then(tryGetWeather).then(showWeather, printError);
+      weatherService.load().then(getDevice).then(tryGetWeather).then(showWeather, printError);
     }
 
     function getDevice() {
