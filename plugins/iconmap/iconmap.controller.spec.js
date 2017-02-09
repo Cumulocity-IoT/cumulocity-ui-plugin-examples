@@ -29,12 +29,6 @@ describe('myapplication.iconmap: iconmapController', function testController() {
     spyOn(c8yBinary, 'list');
   });
 
-  it('adds a marker to the scope with and without icon', function testGetWeather() {
-    // Given
-    // When
-    // Then
-  });
-
   function init(scopeBindings) {
     $scope = _.assign($rootScope.$new(), scopeBindings);
 

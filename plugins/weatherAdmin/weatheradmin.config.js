@@ -24,7 +24,7 @@
     });
 
     c8yViewsProvider.when('/weather', { // when the path "/weather" is accessed ...
-      templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html' //  ... display our html file "weatheAdmin.html" inside the "views" folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
+      templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html' //  ... display our html file "weatherAdmin.html" inside the "views" folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
     });
   }
 }());
