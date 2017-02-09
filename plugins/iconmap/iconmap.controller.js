@@ -1,13 +1,23 @@
-(function wrapper() {
+(function () {
   'use strict';
-  /* global angular */
 
-  var app = angular.module('myapplication.iconmap');
+  angular
+    .module('myapp.iconmap')
+    .controller('iconmapController', iconmapController);
 
-  iconmapController.$inject = [ '$scope', '$q', 'c8yInventory', 'c8yBinary' ];
-  app.controller('iconmapController', iconmapController);
+  iconmapController.$inject = [
+    '$scope',
+    '$q',
+    'c8yInventory',
+    'c8yBinary'
+  ];
 
-  function iconmapController($scope, $q, c8yInventory, c8yBinary) {
+  function iconmapController(
+    $scope,
+    $q,
+    c8yInventory,
+    c8yBinary
+  ) {
     $scope.markers = [];
 
     var getDevicesAndBinaries = {
@@ -89,4 +99,4 @@
       $scope.markers.push(marker);
     }
   }
-})();
+}());

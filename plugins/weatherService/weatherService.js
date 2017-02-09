@@ -1,21 +1,33 @@
-(function wrapper() {
+(function () {
   'use strict';
-  /* global angular */
 
-  var app = angular.module('myapplication.weatherService', [ 'dark-sky' ]);
+  angular
+  .module('myapp.weatherService', [ 'dark-sky' ])
+  .config(configure)
+  .service('weatherService', WeatherService);
 
-  configure.$inject = [ 'darkSkyProvider' ];
-  app.config(configure);
+  configure.$inject = [
+    'darkSkyProvider'
+  ];
 
-  function configure(darkSkyProvider) {
+  function configure(
+    darkSkyProvider
+  ) {
     darkSkyProvider.setUnits('si');
     app.darkSkyProvider = darkSkyProvider;
   }
 
-  WeatherService.$inject = [ '$q', 'darkSky', 'c8ySettings' ];
-  app.service('weatherService', WeatherService);
+  WeatherService.$inject = [
+    '$q',
+    'darkSky',
+    'c8ySettings'
+  ];
 
-  function WeatherService($q, darkSky, c8ySettings) {
+  function WeatherService(
+    $q,
+    darkSky,
+    c8ySettings
+  ) {
     var self = this;
     self.$q = $q;
     self.weather = darkSky;
@@ -43,4 +55,4 @@
     self.c8ySettings.updateOption(self.option);
     app.darkSkyProvider.setApiKey(apiKey);
   };
-})();
+}());

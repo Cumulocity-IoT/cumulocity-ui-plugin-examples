@@ -1,12 +1,22 @@
-(function wrapper() {
+(function () {
   'use strict';
-  /* global angular */
 
-  var app = angular.module('myapplication.weatherAdmin');
-  weatherAdminController.$inject = [ '$scope', 'c8yTitle', 'weatherService', 'gettext' ];
-  app.controller('weatherAdminController', weatherAdminController);
+  angular
+    .module('myapp.weatherAdmin')
+    .controller('weatherAdminController', weatherAdminController);
 
-  function weatherAdminController($scope, c8yTitle, weatherService, gettext) {
+  weatherAdminController.$inject = [
+    '$scope',
+    'c8yTitle',
+    'weatherService',
+    'gettext'
+  ];
+
+  function weatherAdminController(
+    $scope, c8yTitle,
+    weatherService,
+    gettext
+  ) {
     $scope.updateKey = updateKey;
     weatherService.load().then(function setOpt(key) {
       $scope.key = key;
@@ -20,4 +30,4 @@
       weatherService.save($scope.key);
     }
   }
-})();
+}());

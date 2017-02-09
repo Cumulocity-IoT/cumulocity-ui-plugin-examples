@@ -4,7 +4,7 @@
   "category": "Widgets",
   "icon": "cloud",
   "ngModules": [
-    "myapplication.weather"
+    "myapp.weather"
   ],
   "imports": [
     "myapplication/weatherService"

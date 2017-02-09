@@ -1,13 +1,25 @@
-(function wrapper() {
+(function () {
   'use strict';
-  /* global angular */
 
-  var app = angular.module('myapplication.weather');
+  angular
+  .module('myapp.weather')
+  .controller('weatherController', weatherController);
 
-  weatherController.$inject = [ '$scope', '$q', 'weatherService', 'gettext', 'c8yInventory' ];
-  app.controller('weatherController', weatherController);
+  weatherController.$inject = [
+    '$scope',
+    '$q',
+    'weatherService',
+    'gettext',
+    'c8yInventory'
+  ];
 
-  function weatherController($scope, $q, weatherService, gettext, c8yInventory) {
+  function weatherController(
+    $scope,
+    $q,
+    weatherService,
+    gettext,
+    c8yInventory
+  ) {
     $scope.$watch('child.config.device', function reInit(newVal, oldVal) {
       if (newVal && !angular.equals(newVal, oldVal)) {
         init();
@@ -65,4 +77,4 @@
       return 'rotate(' + direction + 'deg)';
     }
   }
-})();
+}());

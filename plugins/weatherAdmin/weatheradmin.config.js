@@ -1,21 +1,30 @@
-(function wrapper() {
+(function () {
   'use strict';
-  /* global angular */
 
-  var app = angular.module('myapplication.weatherAdmin', [ 'myapplication.weatherService' ]);
-  configure.$inject = [ 'c8yNavigatorProvider', 'c8yViewsProvider', 'gettext' ];
-  app.config(configure);
+  angular
+  .module('myapp.weatherAdmin', [ 'myapp.weatherService' ])
+  .config(configure);
 
-  function configure(c8yNavigatorProvider, c8yViewsProvider, gettext) {
-    c8yNavigatorProvider.addNavigation({
-      parent: gettext('Settings'),
-      name: gettext('Weather'),
-      path: 'weather',
-      icon: 'cloud'
+  configure.$inject = [
+    'c8yNavigatorProvider',
+    'c8yViewsProvider',
+    'gettext'
+  ];
+
+  function configure(
+    c8yNavigatorProvider,
+    c8yViewsProvider,
+    gettext
+  ) {
+    c8yNavigatorProvider.addNavigation({ // adds a menu item to the navigator with ...
+      parent: gettext('Settings'), // ... the category *"Settings"*
+      name: gettext('Weather'), // ... the name *"Weather"*
+      path: 'weather', // ... */weather* as path
+      icon: 'cloud' // ... the cloud icon (icons are provided by the great Font Awesome library and you can use any of their [icon names](http://fontawesome.io/icons/) without the *fa-* prefix here
     });
 
-    c8yViewsProvider.when('/weather', {
-      templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html'
+    c8yViewsProvider.when('/weather', { // when the path "/weather" is accessed ...
+      templateUrl: ':::PLUGIN_PATH:::/views/weatherAdmin.html' //  ... display our html file "weatheAdmin.html" inside the "views" folder of our plugin (the plugin's folder is represented using the magic string ```:::PLUGIN_PATH:::```, which is replaced by the actual path during the build process)
     });
   }
-})();
+}());
