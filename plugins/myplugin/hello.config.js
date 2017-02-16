@@ -5,11 +5,7 @@
     .module('myapp.hello')
     .config(configure);
 
-  configure.$inject = [
-    'c8yNavigatorProvider',
-    'c8yViewsProvider'
-  ];
-
+  /* @ngInject */
   function configure(
     c8yNavigatorProvider,
     c8yViewsProvider

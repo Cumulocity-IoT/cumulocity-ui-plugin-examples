@@ -5,10 +5,7 @@
     .module('myapp.deviceEventsRealTime')
     .config(configure);
 
-  configure.$inject = [
-    'c8yViewsProvider'
-  ];
-
+  /* @ngInject */
   function configure(c8yViewsProvider) {
 
     c8yViewsProvider.when('/device/:deviceId', {

@@ -5,13 +5,7 @@
     .module('myapp.deviceContact')
     .controller('deviceContactCtrl', DeviceContactController);
 
-  DeviceContactController.$inject = [
-    '$scope',
-    '$routeParams',
-    'c8yDevices',
-    'c8yAlert'
-  ];
-
+  /* @ngInject */
   function DeviceContactController($scope, $routeParams, c8yDevices, c8yAlert) {
 
     function load() {

@@ -5,13 +5,7 @@
     .module('myapp.deviceEventsRealTime')
     .controller('deviceEventsRealTimeCtrl', DeviceEventsRealTimeController);
 
-  DeviceEventsRealTimeController.$inject = [
-    '$scope',
-    '$routeParams',
-    'c8yRealtime',
-    'c8yAlert'
-  ];
-
+  /* @ngInject */
   function DeviceEventsRealTimeController($scope, $routeParams, c8yRealtime, c8yAlert) {
     var deviceId = $routeParams.deviceId;
     var eventsChannel = '/events/' + deviceId;
