@@ -6,7 +6,8 @@
     "myapp.deviceEventsRealTime"
   ],
   "js": [
-    "index.js",
+    "deviceEventsRealTime.module.js",
+    "deviceEventsRealTime.config.js",
     "deviceEventsRealTime.controller.js"
   ]
 }

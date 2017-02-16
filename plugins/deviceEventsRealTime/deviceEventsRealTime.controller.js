@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('myapp.deviceEventsRealTime')
+  angular
+    .module('myapp.deviceEventsRealTime')
     .controller('deviceEventsRealTimeCtrl', DeviceEventsRealTimeController);
 
+  /* @ngInject */
   function DeviceEventsRealTimeController($scope, $routeParams, c8yRealtime, c8yAlert) {
     var deviceId = $routeParams.deviceId;
     var eventsChannel = '/events/' + deviceId;

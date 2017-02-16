@@ -1,0 +1,19 @@
+{
+	"name": "Examples",
+	"comment": "Release with additional example plugins",
+    "replaceImports": { "core/c8yBranding": "myapplication/myBranding" },
+	"applications": [
+		{
+			"contextPath": "administration",
+            "addImports": [ "myapplication/weatherAdmin" ]
+		},
+		{
+			"contextPath": "devicemanagement",
+            "addImports": [ "myapplication/deviceEventsRealTime", "myapplication/deviceContact" ]
+		},
+		{
+			"contextPath": "cockpit",
+            "addImports": [ "myapplication/weather", "myapplication/iconmap" ]
+		}
+	]
+}

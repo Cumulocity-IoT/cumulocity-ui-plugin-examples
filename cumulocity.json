@@ -12,6 +12,10 @@
     "core/deviceDetail",
     "myapplication/myplugin",
     "myapplication/deviceContact",
-    "myapplication/deviceEventsRealTime"
+    "myapplication/deviceEventsRealTime",
+    "myapplication/weatherService",
+    "myapplication/weather",
+    "myapplication/weatherAdmin",
+    "myapplication/iconmap"
   ]
 }
