@@ -6,7 +6,8 @@
     "myapp.deviceContact"
   ],
   "js": [
-    "index.js",
+    "deviceContact.module.js",
+    "deviceContact.config.js",
     "deviceContact.controller.js"
   ]
 }

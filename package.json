@@ -2,6 +2,6 @@
   "name": "cumulocity-ui-plugin-examples",
   "version": "2.0.3",
   "dependencies": {
-    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.37.0.tar.gz"
+    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.42.0.tar.gz"
   }
 }
