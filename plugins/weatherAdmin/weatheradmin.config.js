@@ -5,12 +5,7 @@
   .module('myapp.weatherAdmin', [ 'myapp.weatherService' ])
   .config(configure);
 
-  configure.$inject = [
-    'c8yNavigatorProvider',
-    'c8yViewsProvider',
-    'gettext'
-  ];
-
+  /* @ngInject */
   function configure(
     c8yNavigatorProvider,
     c8yViewsProvider,

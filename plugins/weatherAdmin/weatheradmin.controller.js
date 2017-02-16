@@ -5,13 +5,7 @@
     .module('myapp.weatherAdmin')
     .controller('weatherAdminController', weatherAdminController);
 
-  weatherAdminController.$inject = [
-    '$scope',
-    'c8yTitle',
-    'weatherService',
-    'gettext'
-  ];
-
+  /* @ngInject */
   function weatherAdminController(
     $scope, c8yTitle,
     weatherService,

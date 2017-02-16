@@ -5,11 +5,7 @@
     .module('myapp.weather', [ 'myapp.weatherService' ])
     .config(configure);
 
-  configure.$inject = [
-    'c8yComponentsProvider',
-    'gettext'
-  ];
-
+  /* @ngInject */
   function configure(
     c8yComponentsProvider,
     gettext

@@ -5,13 +5,7 @@
     .module('myapp.iconmap')
     .controller('iconmapController', iconmapController);
 
-  iconmapController.$inject = [
-    '$scope',
-    '$q',
-    'c8yInventory',
-    'c8yBinary'
-  ];
-
+  /* @ngInject */
   function iconmapController(
     $scope,
     $q,

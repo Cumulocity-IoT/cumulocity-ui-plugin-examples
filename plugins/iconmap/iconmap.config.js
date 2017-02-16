@@ -5,11 +5,7 @@
     .module('myapp.iconmap')
     .config(configure);
 
-  configure.$inject = [
-    'c8yComponentsProvider',
-    'gettext'
-  ];
-
+  /* @ngInject */
   function configure(
     c8yComponentsProvider,
     gettext

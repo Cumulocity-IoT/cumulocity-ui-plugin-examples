@@ -1,6 +1,6 @@
 <div ng-controller="weatherController" style="padding: 10px">
-  <div ng-show="status != 'ready'" class="alert alert-info">{{ status }}</div>
-  <div ng-show="status == 'ready'">
+  <div ng-show="status !== 'ready'" class="alert alert-info">{{ status }}</div>
+  <div ng-show="status === 'ready'">
     <table class="table">
       <tbody>
         <tr>
@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <td>{{ 'Wind' | translate }}</td>
-          <td>{{weather.currently.windSpeed}} {{ 'm/s' | translate }} 
+          <td>{{weather.currently.windSpeed}} {{ 'm/s' | translate }}
             <span class="direction" ng-style="windDirection" uib-tooltip="{{weather.currently.windBearing}} {{ 'deg' | translate }}">↑</span>
           </td>
         </tr>

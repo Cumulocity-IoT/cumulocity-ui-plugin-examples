@@ -5,14 +5,7 @@
   .module('myapp.weather')
   .controller('weatherController', weatherController);
 
-  weatherController.$inject = [
-    '$scope',
-    '$q',
-    'weatherService',
-    'gettext',
-    'c8yInventory'
-  ];
-
+  /* @ngInject */
   function weatherController(
     $scope,
     $q,

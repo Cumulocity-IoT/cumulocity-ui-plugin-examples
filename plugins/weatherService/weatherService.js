@@ -6,10 +6,7 @@
   .config(configure)
   .service('weatherService', WeatherService);
 
-  configure.$inject = [
-    'darkSkyProvider'
-  ];
-
+  /* @ngInject */
   function configure(
     darkSkyProvider
   ) {
@@ -17,12 +14,7 @@
     app.darkSkyProvider = darkSkyProvider;
   }
 
-  WeatherService.$inject = [
-    '$q',
-    'darkSky',
-    'c8ySettings'
-  ];
-
+  /* @ngInject */
   function WeatherService(
     $q,
     darkSky,
