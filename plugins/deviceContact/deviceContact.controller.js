@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
-  angular.module('myapp.deviceContact')
+  angular
+    .module('myapp.deviceContact')
     .controller('deviceContactCtrl', DeviceContactController);
 
+  /* @ngInject */
   function DeviceContactController($scope, $routeParams, c8yDevices, c8yAlert) {
 
     function load() {
