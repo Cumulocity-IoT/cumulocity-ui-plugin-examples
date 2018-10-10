@@ -2,13 +2,19 @@
   "name": "cumulocity-ui-plugin-examples",
   "version": "2.0.3",
   "dependencies": {
-    "cumulocity-ui-build": "http://resources.cumulocity.com/webapps/ui/7.45.1.tar.gz"
+    "@c8y/style": "9.16.1",
+    "@c8y/ng1-modules": "9.16.1"
   },
   "scripts": {
+    "serve": "c8ycli serve",
+    "build": "c8ycli build",
+    "deploy": "c8ycli deploy",
     "lint": "eslint --cache --",
     "test": "karma start --"
   },
   "devDependencies": {
+    "@c8y/cli": "9.16.1",
+    "@angular-devkit/build-angular": "0.8.4",
     "angular-mocks": "1.5.8",
     "babel-eslint": "6.x",
     "eslint": "3.12.2",
