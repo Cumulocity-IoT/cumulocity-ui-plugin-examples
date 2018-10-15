@@ -2,8 +2,8 @@
   "name": "cumulocity-ui-plugin-examples",
   "version": "2.0.3",
   "dependencies": {
-    "@c8y/style": "9.16.1",
-    "@c8y/ng1-modules": "9.16.1"
+    "@c8y/style": "9.16.3-rc.0",
+    "@c8y/ng1-modules": "9.16.3-rc.0"
   },
   "scripts": {
     "serve": "c8ycli serve",
@@ -13,7 +13,7 @@
     "test": "karma start --"
   },
   "devDependencies": {
-    "@c8y/cli": "9.16.1",
+    "@c8y/cli": "9.16.3-rc.0",
     "@angular-devkit/build-angular": "0.8.4",
     "angular-mocks": "1.5.8",
     "babel-eslint": "6.x",
