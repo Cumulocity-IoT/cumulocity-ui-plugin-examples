@@ -1,4 +1,4 @@
-describe('myapplication.weather: WeatherController', function testController() {
+describe('myapp.weather: WeatherController', function testController() {
   var $rootScope;
   var $controller;
   var $q;
@@ -10,7 +10,7 @@ describe('myapplication.weather: WeatherController', function testController() {
 
   beforeEach(function beforeEach() {
     common.globalBeforeWithUI();
-    module('myapplication.weather');
+    module('myapp.weather');
 
     inject(function injector(
       _$rootScope_,

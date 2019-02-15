@@ -6,12 +6,14 @@
   .config(configure)
   .service('weatherService', WeatherService);
 
+  var setApiKey;
+
   /* @ngInject */
   function configure(
     darkSkyProvider
   ) {
     darkSkyProvider.setUnits('si');
-    app.darkSkyProvider = darkSkyProvider;
+    setApiKey = darkSkyProvider.setApiKey.bind(darkSkyProvider);
   }
 
   /* @ngInject */
@@ -32,7 +34,7 @@
     return self.$q(function loadOpt(resolve) {
       self.c8ySettings.detail(self.option).then(function setKey(res) {
         self.option.value = res.data.value;
-        app.darkSkyProvider.setApiKey(self.option.value);
+        setApiKey(self.option.value);
         resolve(self.option.value);
       }, function initKey() {
         self.c8ySettings.createOption(self.option);
@@ -45,6 +47,6 @@
     var self = this;
     self.option.value = apiKey;
     self.c8ySettings.updateOption(self.option);
-    app.darkSkyProvider.setApiKey(apiKey);
+    setApiKey(apiKey);
   };
 }());
