@@ -2,18 +2,21 @@
   "name": "cumulocity-ui-plugin-examples",
   "version": "2.0.3",
   "dependencies": {
-    "@c8y/style": "9.16.3-rc.0",
-    "@c8y/ng1-modules": "9.16.3-rc.0"
+    "@c8y/style": "^1004.0.0",
+    "@c8y/ng1-modules": "^1004.0.0"
   },
   "scripts": {
-    "serve": "c8ycli serve",
-    "build": "c8ycli build",
+    "serve": "c8ycli server node_modules/@c8y/ng1-modules/apps/* --env.target=targets/examples.json",
+    "build": "npm run build:devicemanagement && npm run build:cockpit && npm run build:administration",
+    "build:devicemanagement": "c8ycli build  node_modules/@c8y/ng1-modules/apps/devicemanagement --env.target=targets/examples.json --app.dynamicOptionsUrl=/apps/public/public-options/options.js",
+    "build:cockpit": "c8ycli build  node_modules/@c8y/ng1-modules/apps/cockpit --env.target=targets/examples.json --app.dynamicOptionsUrl=/apps/public/public-options/options.js",
+    "build:administration": "c8ycli build  node_modules/@c8y/ng1-modules/apps/administration --env.target=targets/examples.json --app.dynamicOptionsUrl=/apps/public/public-options/options.js",
     "deploy": "c8ycli deploy",
     "lint": "eslint --cache --",
     "test": "karma start --"
   },
   "devDependencies": {
-    "@c8y/cli": "9.16.3-rc.0",
+    "@c8y/cli": "^1004.0.0",
     "@angular-devkit/build-angular": "0.8.4",
     "angular-mocks": "1.5.8",
     "babel-eslint": "6.x",
