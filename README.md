@@ -28,7 +28,7 @@ Application embedded plugin that adds a new tab to device details view and displ
 
 ```
 npm install @c8y/style@^1004.0.0 @c8y/ng1-modules@^1004.0.0
-npm install -D @c8y/cli@^1004.0.0 @angular-devkit/build-angular@8.0.4
+npm install -D @c8y/cli@^1004.0.0 @angular-devkit/build-angular@0.8.4
 ```
 
 ## Using legacy targets
