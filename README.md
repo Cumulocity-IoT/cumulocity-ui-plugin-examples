@@ -1,3 +1,5 @@
+# Archived -- this repository is archived and is not a valid Cumulocity example anymore
+
 cumulocity-ui-plugin-examples
 =============================
 
@@ -13,7 +15,7 @@ Simple hello world plugin.
 Sample branding base on the base (`core/c8yBranding`). You can inspect the less files to inspect the many less variables available for configuration.
 
 * **deviceContact**
-Application embedded plugin that adds a new tab to device details view named *Contact* which displays a simple form for providing contact details. Contact details are stored in Managed Object’s data.
+Application embedded plugin that adds a new tab to device details view named *Contact* which displays a simple form for providing contact details. Contact details are stored in Managed Objectâ€™s data.
 
 * **deviceEventsRealTime**
 Application embedded plugin that adds a new tab to device details view and displays the list of incoming device events in real-time.
